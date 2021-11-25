@@ -3,4 +3,11 @@
     <string name="login">LOGIN</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="register_text">Register Here!</string>
+    <string name="code">Code</string>
+    <string name="recover">Recover</string>
+    <string name="recover_here">Recover account</string>
+    <string name="forgot_password">Forgot Password</string>
 </resources>
