@@ -10,17 +10,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileAppSaude">
-        <activity android:name=".Login">
+        <activity android:name=".login.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginCode" />
+        <activity android:name=".login.LoginCode" />
         <activity android:name=".Menu" />
-        <activity android:name=".Recover" />
-        <activity android:name=".Register" />
+        <activity android:name=".login.Recover" />
+        <activity android:name=".login.Register" />
+        <activity android:name=".measurement.Vaccine" />
+        <activity android:name=".measurement.BloodPressure" />
+        <activity android:name=".measurement.Diabetes" />
+        <activity android:name=".measurement.HeartBeat" />
+        <activity android:name=".measurement.Height" />
+        <activity android:name=".measurement.Weigth" />
 
         <uses-library
             android:name="org.apache.http.legacy"

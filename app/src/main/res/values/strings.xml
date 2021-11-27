@@ -10,4 +10,10 @@
     <string name="recover">Recover</string>
     <string name="recover_here">Recover account</string>
     <string name="forgot_password">Forgot Password</string>
+    <string name="vacinas">Vacinas</string>
+    <string name="diabetes">Diabetes</string>
+    <string name="pressao">Pressão</string>
+    <string name="peso">Peso</string>
+    <string name="altura">Altura</string>
+    <string name="batimentos">Batimentos</string>
 </resources>

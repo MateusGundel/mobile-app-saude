@@ -1,4 +1,4 @@
-package com.elefante.app_saude;
+package com.elefante.app_saude.login;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.elefante.app_saude.Menu;
+import com.elefante.app_saude.R;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
