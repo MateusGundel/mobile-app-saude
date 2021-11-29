@@ -16,4 +16,7 @@
     <string name="peso">Peso</string>
     <string name="altura">Altura</string>
     <string name="batimentos">Batimentos</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="vacina">Vacina</string>
+    <string name="sua_vacina">Sua vacina</string>
 </resources>
