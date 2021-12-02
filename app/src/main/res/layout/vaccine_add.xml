@@ -11,11 +11,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
         android:ems="10"
-        android:hint="@string/sua_vacina"
+        android:hint="@string/input_vacine"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="no" />
 
     <Button
         android:id="@+id/button_add_vaccine"

@@ -18,7 +18,7 @@
     <string name="batimentos">Batimentos</string>
     <string name="adicionar">Adicionar</string>
     <string name="vacina">Vacina</string>
-    <string name="sua_vacina">Sua vacina</string>
+    <string name="input_vacine">Sua vacina</string>
     <string name="logoContentDescription">EA HEALTH icon</string>
-    <string name="sair">Sair</string>
+    <string name="logout">Sair</string>
 </resources>
