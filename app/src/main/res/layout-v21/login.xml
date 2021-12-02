@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_login"
         android:backgroundTint="@android:color/white"
-        tools:ignore="UnusedAttribute" />
+        />
 
     <TextView
         android:id="@+id/register_here"
