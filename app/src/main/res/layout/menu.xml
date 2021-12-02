@@ -1,7 +1,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/tableLayout1"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     android:stretchColumns="0,1">
 
     <TableRow
@@ -10,10 +10,11 @@
 
         <LinearLayout
             android:id="@+id/menu_vaccine"
+            style="@style/MenuItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/cardview_dark_background"
+            android:background="@drawable/button_menu"
             android:clickable="true"
             android:focusable="true"
             android:orientation="vertical"
@@ -23,8 +24,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/ic_launcher_background"
-                android:textColor="@color/black"
+                android:background="@drawable/vacine_icon"
                 android:textSize="20sp" />
 
             <TextView
@@ -33,7 +33,7 @@
                 android:layout_margin="10dp"
                 android:text="@string/vacinas"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                style="@style/MenuItem"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/cardview_dark_background"
+            android:background="@drawable/button_menu"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -51,11 +51,11 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/ic_launcher_background"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:background="@drawable/heartbeat_icon_white"
+                />
 
             <TextView
+                style="@style/MenuItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -77,20 +77,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/cardview_dark_background"
+            android:background="@drawable/button_menu"
             android:orientation="vertical"
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="50dp"
+                android:layout_width="47dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/ic_launcher_background"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:background="@drawable/height_icon_white" />
 
             <TextView
                 android:layout_width="match_parent"
+                style="@style/MenuItem"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/altura"
@@ -105,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/cardview_dark_background"
+            android:background="@drawable/button_menu"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -113,11 +112,11 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/ic_launcher_background"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:background="@drawable/weight_icon_white"
+                 />
 
             <TextView
+                style="@style/MenuItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -139,7 +138,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/cardview_dark_background"
+            android:background="@drawable/button_menu"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -149,7 +148,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:adjustViewBounds="false"
-                android:background="@drawable/ic_launcher_background"
+                android:background="@drawable/diabetes_sugar_icon_white"
                 android:baselineAlignBottom="false"
                 android:clickable="false"
                 android:scaleType="center"
@@ -157,6 +156,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                style="@style/MenuItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -172,7 +172,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/cardview_dark_background"
+            android:background="@drawable/button_menu"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -181,11 +181,12 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/ic_launcher_background"
+                android:background="@drawable/hypertension_icon_white"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <TextView
+                style="@style/MenuItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"

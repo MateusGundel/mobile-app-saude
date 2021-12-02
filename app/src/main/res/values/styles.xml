@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GreenText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#00FF00</item>
+    </style>
+    <style name="MenuItem">
+        <item name="android:textColor">#F2F2F2</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+</resources>
