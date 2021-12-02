@@ -40,6 +40,7 @@ public class Vaccine extends AppCompatActivity {
             startActivity(appInfo);
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     public void getData(String access_code) {

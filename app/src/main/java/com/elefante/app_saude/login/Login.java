@@ -37,6 +37,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+        getSupportActionBar().hide();
         SharedPreferences prefs = this.getSharedPreferences(
                 "com.elefante.app_saude", Context.MODE_PRIVATE);
         String email = prefs.getString("email", "");

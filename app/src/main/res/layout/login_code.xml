@@ -6,7 +6,18 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true"
+    android:background="@drawable/backgroun_code"
     android:focusableInTouchMode="true">
+
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="350dp"
+        android:layout_height="160dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/logoContentDescription" />
 
     <EditText
         android:id="@+id/login_code"
@@ -19,6 +30,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColorHint="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/email_text" />
 
     <Button
