@@ -12,12 +12,17 @@
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout-v21/login.xml" value="0.371875" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/blood_pressure.xml" value="0.371875" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/diabetes.xml" value="0.371875" />
+        <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/heartbeat.xml" value="0.328125" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/height.xml" value="0.371875" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/login.xml" value="0.371875" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/login_code.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/menu.xml" value="0.33" />
+        <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/recover.xml" value="0.328125" />
+        <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/register.xml" value="0.328125" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/user_info.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/vaccine.xml" value="0.328125" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/vaccine_add.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/weight.xml" value="0.328125" />
       </map>
     </option>
   </component>
