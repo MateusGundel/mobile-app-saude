@@ -28,12 +28,12 @@
                 android:textSize="20sp" />
 
             <TextView
+                style="@style/MenuItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/vacinas"
                 android:textAlignment="center"
-                style="@style/MenuItem"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -51,8 +51,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/heartbeat_icon_white"
-                />
+                android:background="@drawable/heartbeat_icon_white" />
 
             <TextView
                 style="@style/MenuItem"
@@ -88,8 +87,8 @@
                 android:background="@drawable/height_icon_white" />
 
             <TextView
-                android:layout_width="match_parent"
                 style="@style/MenuItem"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/altura"
@@ -112,8 +111,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/weight_icon_white"
-                 />
+                android:background="@drawable/weight_icon_white" />
 
             <TextView
                 style="@style/MenuItem"
@@ -196,6 +194,15 @@
                 android:textSize="20sp" />
 
         </LinearLayout>
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/sair_temporario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sair temporario" />
     </TableRow>
 
 </TableLayout>

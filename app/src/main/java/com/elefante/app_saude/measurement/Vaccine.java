@@ -39,6 +39,7 @@ public class Vaccine extends AppCompatActivity {
             Intent appInfo = new Intent(Vaccine.this, VaccineAdd.class);
             startActivity(appInfo);
         });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void getData(String access_code) {

@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.elefante.app_saude.login.Login;
 import com.elefante.app_saude.measurement.BloodPressure;
 import com.elefante.app_saude.measurement.Diabetes;
 import com.elefante.app_saude.measurement.HeartBeat;
@@ -56,6 +58,16 @@ public class Menu extends AppCompatActivity {
         menu_blood_pressure.setOnClickListener(v -> {
             Intent appInfo = new Intent(Menu.this, BloodPressure.class);
             startActivity(appInfo);
+        });
+
+        Button exit_button = findViewById(R.id.sair_temporario);
+        SharedPreferences.Editor editor = prefs.edit();
+        exit_button.setOnClickListener(v -> {
+            editor.remove("email");
+            editor.remove("access_token");
+            editor.apply();
+            Intent login = new Intent(Menu.this, Login.class);
+            startActivity(login);
         });
     }
 }
