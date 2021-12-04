@@ -21,4 +21,5 @@
     <string name="input_vacine">Sua vacina</string>
     <string name="logoContentDescription">EA HEALTH icon</string>
     <string name="logout">Sair</string>
+    <string name="content_description_add_weight_button">add weight button</string>
 </resources>
