@@ -23,4 +23,6 @@
     <string name="logout">Sair</string>
     <string name="content_description_add_weight_button">add weight button</string>
     <string name="vaccine_title">Vacinas</string>
+    <string name="vaccine_icon_content">Vaccine icon</string>
+    <string name="add_vaccine_button_content_desc">add vaccine button</string>
 </resources>

@@ -28,7 +28,8 @@
         app:layout_constraintBottom_toTopOf="@+id/container_components"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/vaccine_title"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/vaccine_icon_content" />
     <View
         android:id="@+id/container_components"
         style="@style/container_component"
@@ -47,7 +48,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/add_vaccine_button_content_desc"
+        android:focusable="true" />
 
     <ListView
         android:id="@+id/vaccine_list_view"
