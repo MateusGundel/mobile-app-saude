@@ -17,6 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:autofillHints="no" />
+    <EditText
+        android:id="@+id/date_add_vaccine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Data Vacina"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/text_add_vaccine"
+        android:autofillHints="no" />
+
 
     <Button
         android:id="@+id/button_add_vaccine"
@@ -24,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/adicionar"
-        app:layout_constraintTop_toBottomOf="@+id/text_add_vaccine"
+        app:layout_constraintTop_toBottomOf="@+id/date_add_vaccine"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="155dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
