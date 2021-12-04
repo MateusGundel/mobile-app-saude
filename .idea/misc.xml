@@ -21,7 +21,7 @@
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/register.xml" value="0.328125" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/user_info.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/vaccine.xml" value="0.328125" />
-        <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/vaccine_add.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/vaccine_add.xml" value="0.33" />
         <entry key="..\:/Users/Patrick/StudioProjects/mobile-app-saude/app/src/main/res/layout/weight.xml" value="0.328125" />
       </map>
     </option>
@@ -75,5 +75,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>
