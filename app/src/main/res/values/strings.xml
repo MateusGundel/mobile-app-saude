@@ -22,4 +22,5 @@
     <string name="logoContentDescription">EA HEALTH icon</string>
     <string name="logout">Sair</string>
     <string name="content_description_add_weight_button">add weight button</string>
+    <string name="vaccine_title">Vacinas</string>
 </resources>
