@@ -17,6 +17,8 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
