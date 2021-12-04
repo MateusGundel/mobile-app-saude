@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/background_offwhite">
     <TextView
-        android:id="@+id/heath_beat_title"
+        android:id="@+id/heart_beat_title"
         style="@style/title_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,17 +15,17 @@
         android:textColor="@color/black_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/heath_beat_icon"
+        app:layout_constraintEnd_toStartOf="@id/heart_beat_icon"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
 
     <ImageView
-        android:id="@+id/heath_beat_icon"
+        android:id="@+id/heart_beat_icon"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/heath_beat_title"
+        app:layout_constraintStart_toEndOf="@id/heart_beat_title"
         android:src="@drawable/heartbeat_icon_white"
         tools:ignore="MissingConstraints" />
     <View
@@ -33,10 +33,10 @@
         style="@style/container_component"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/heath_beat_listView"
+        app:layout_constraintTop_toTopOf="@id/heart_beat_listView"
         />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/heath_beat_add_button"
+        android:id="@+id/heart_beat_add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -49,11 +49,11 @@
         android:contentDescription="@string/content_description_add_weight_button" />
 
     <ListView
-        android:id="@+id/heath_beat_listView"
+        android:id="@+id/heart_beat_listView"
         android:layout_width="409dp"
         android:layout_height="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/heath_beat_title"
+        app:layout_constraintTop_toBottomOf="@id/heart_beat_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

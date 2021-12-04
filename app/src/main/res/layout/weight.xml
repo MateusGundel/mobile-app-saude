@@ -12,7 +12,7 @@
         style="@style/title_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Peso"
+        android:text="@string/weight_title"
         android:textColor="@color/black_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/weight_title"
         android:src="@drawable/weight_icon"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:contentDescription="weight icon" />
     <View
         android:id="@+id/container_components"
         style="@style/container_component"
@@ -37,7 +38,7 @@
         app:layout_constraintTop_toTopOf="@id/weight_list_view"
         />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/heath_beat_add_button"
+        android:id="@+id/weight_add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
