@@ -9,7 +9,7 @@
     >
 
     <TextView
-        android:id="@+id/blood_pressure_title"
+        android:id="@+id/heath_beat_title"
         style="@style/title_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,17 +17,17 @@
         android:textColor="@color/black_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/blood_pressure_icon"
+        app:layout_constraintEnd_toStartOf="@id/heath_beat_icon"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
 
     <ImageView
-        android:id="@+id/blood_pressure_icon"
+        android:id="@+id/heath_beat_icon"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/blood_pressure_title"
+        app:layout_constraintStart_toEndOf="@id/heath_beat_title"
         android:src="@drawable/hypertension_icon"
         tools:ignore="MissingConstraints" />
     <View
@@ -35,10 +35,10 @@
         style="@style/container_component"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/blood_pressure_listView"
+        app:layout_constraintTop_toTopOf="@id/heath_beat_listView"
         />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/weight_add_button"
+        android:id="@+id/heath_beat_add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -51,11 +51,11 @@
         android:contentDescription="@string/content_description_add_weight_button" />
 
     <ListView
-        android:id="@+id/blood_pressure_listView"
+        android:id="@+id/heath_beat_listView"
         android:layout_width="409dp"
         android:layout_height="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/blood_pressure_title"
+        app:layout_constraintTop_toBottomOf="@id/heath_beat_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
