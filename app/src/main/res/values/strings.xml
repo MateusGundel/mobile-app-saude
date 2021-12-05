@@ -28,4 +28,5 @@
     <string name="add_vaccine_button_content_desc">add vaccine button</string>
     <string name="weight_title">Peso</string>
     <string name="perfil">Perfil</string>
+    <string name="remover">Remover</string>
 </resources>

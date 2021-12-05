@@ -33,6 +33,9 @@
         <activity
             android:name=".measurement.VaccineAdd"
             android:parentActivityName=".measurement.Vaccine" />
+        <activity
+            android:name=".measurement.VaccineShow"
+            android:parentActivityName=".measurement.Vaccine" />
         <activity android:name=".measurement.BloodPressure" />
         <activity android:name=".measurement.Diabetes" />
         <activity android:name=".measurement.HeartBeat" />

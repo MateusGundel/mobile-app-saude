@@ -22,7 +22,6 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Vaccine extends AppCompatActivity {
@@ -59,6 +58,7 @@ public class Vaccine extends AppCompatActivity {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             VaccineItem vaccine_item = new VaccineItem();
                             vaccine_item.name = jsonObject.getString("name");
+                            vaccine_item.id = jsonObject.getInt("id");
                             vaccine_item.date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(jsonObject.getString("date"));
                             list_item.add(vaccine_item);
                         }
@@ -68,6 +68,14 @@ public class Vaccine extends AppCompatActivity {
                     runOnUiThread(() -> {
                         ArrayAdapter<VaccineItem> adapter = new ArrayAdapter<>(Vaccine.this, android.R.layout.simple_list_item_1, list_item);
                         ListView vaccine_list = findViewById(R.id.vaccine_list_view);
+                        vaccine_list.setOnItemClickListener((parent, view, position, id) -> {
+                            Intent appInfo = new Intent(Vaccine.this, VaccineShow.class);
+                            VaccineItem item = adapter.getItem(position);
+                            appInfo.putExtra("name", item.name);
+                            appInfo.putExtra("id", item.id.toString());
+                            appInfo.putExtra("date", new SimpleDateFormat("dd/MM/yyyy hh:mm").format(item.date).toString());
+                            startActivity(appInfo);
+                        });
                         vaccine_list.setAdapter(adapter);
                     });
 

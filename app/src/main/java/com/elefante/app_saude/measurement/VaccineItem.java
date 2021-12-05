@@ -6,6 +6,7 @@ import java.util.Date;
 public class VaccineItem {
     public String name;
     public Date date;
+    public Integer id;
 
     @Override
     public String toString() {
