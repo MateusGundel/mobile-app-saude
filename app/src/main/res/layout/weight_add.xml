@@ -6,11 +6,11 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/heart_beat_title"
+        android:id="@+id/weight_add_title"
         style="@style/title_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adicionar medição diabetes"
+        android:text="Adicionar peso"
         android:textColor="@color/black_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,7 +18,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/text_add_diabetes"
+        android:id="@+id/text_add_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:autofillHints="no" />
     <EditText
-        android:id="@+id/date_add_diabetes"
+        android:id="@+id/date_add_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -38,17 +38,17 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/text_add_diabetes"
+       app:layout_constraintTop_toBottomOf="@id/text_add_weight"
         android:autofillHints="no" />
 
 
     <Button
-        android:id="@+id/button_add_diabetes"
+        android:id="@+id/button_add_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/adicionar"
-        app:layout_constraintTop_toBottomOf="@+id/date_add_diabetes"
+        app:layout_constraintTop_toBottomOf="@+id/date_add_weight"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="155dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
