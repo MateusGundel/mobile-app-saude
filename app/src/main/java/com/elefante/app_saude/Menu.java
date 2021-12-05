@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.elefante.app_saude.login.Login;
@@ -16,8 +19,25 @@ import com.elefante.app_saude.measurement.HeartBeat;
 import com.elefante.app_saude.measurement.Height;
 import com.elefante.app_saude.measurement.Vaccine;
 import com.elefante.app_saude.measurement.Weigth;
+import com.elefante.app_saude.user.UserInfo;
 
 public class Menu extends AppCompatActivity {
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navigation_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.perfil_button) {
+            Intent appInfo = new Intent(Menu.this, UserInfo.class);
+            startActivity(appInfo);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,16 +78,6 @@ public class Menu extends AppCompatActivity {
         menu_blood_pressure.setOnClickListener(v -> {
             Intent appInfo = new Intent(Menu.this, BloodPressure.class);
             startActivity(appInfo);
-        });
-
-        Button exit_button = findViewById(R.id.sair_temporario);
-        SharedPreferences.Editor editor = prefs.edit();
-        exit_button.setOnClickListener(v -> {
-            editor.remove("email");
-            editor.remove("access_token");
-            editor.apply();
-            Intent login = new Intent(Menu.this, Login.class);
-            startActivity(login);
         });
     }
 }

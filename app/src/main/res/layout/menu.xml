@@ -196,13 +196,4 @@
         </LinearLayout>
     </TableRow>
 
-    <TableRow>
-
-        <Button
-            android:id="@+id/sair_temporario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="sair temporario" />
-    </TableRow>
-
 </TableLayout>

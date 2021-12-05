@@ -67,7 +67,7 @@ public class Vaccine extends AppCompatActivity {
                     }
                     runOnUiThread(() -> {
                         ArrayAdapter<VaccineItem> adapter = new ArrayAdapter<>(Vaccine.this, android.R.layout.simple_list_item_1, list_item);
-                        ListView vaccine_list = findViewById(R.id.list_view);
+                        ListView vaccine_list = findViewById(R.id.vaccine_list_view);
                         vaccine_list.setAdapter(adapter);
                     });
 

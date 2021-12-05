@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/background_offwhite"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_offwhite">
 
     <TextView
         android:id="@+id/blood_pressure_title"
@@ -15,9 +13,9 @@
         android:layout_height="wrap_content"
         android:text="Pressão \nSanguinea"
         android:textColor="@color/black_text"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/blood_pressure_icon"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -26,17 +24,18 @@
         android:id="@+id/blood_pressure_icon"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:src="@drawable/hypertension_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/blood_pressure_title"
-        android:src="@drawable/hypertension_icon"
         tools:ignore="MissingConstraints" />
+
     <View
         android:id="@+id/container_components"
         style="@style/container_component"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/blood_pressure_listView"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/blood_pressure_listView" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/blood_pressure_add_button"
         android:layout_width="wrap_content"
@@ -44,18 +43,18 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
+        android:contentDescription="@string/content_description_add_weight_button"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add"
-        android:focusable="true"
-        android:contentDescription="@string/content_description_add_weight_button" />
+        app:srcCompat="@android:drawable/ic_input_add" />
 
     <ListView
         android:id="@+id/blood_pressure_listView"
         android:layout_width="409dp"
         android:layout_height="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/blood_pressure_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/blood_pressure_title" />
 </androidx.constraintlayout.widget.ConstraintLayout>

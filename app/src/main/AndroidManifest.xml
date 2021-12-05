@@ -15,6 +15,7 @@
         android:theme="@style/Theme.MobileAppSaude"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
+
         <activity android:name=".login.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,6 +38,7 @@
         <activity android:name=".measurement.HeartBeat" />
         <activity android:name=".measurement.Height" />
         <activity android:name=".measurement.Weigth" />
+        <activity android:name=".user.UserInfo" />
 
         <uses-library
             android:name="org.apache.http.legacy"
