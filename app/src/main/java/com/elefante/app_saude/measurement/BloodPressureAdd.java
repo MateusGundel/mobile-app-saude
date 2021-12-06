@@ -40,6 +40,7 @@ public class BloodPressureAdd extends AppCompatActivity {
             });
 
         }
+    // TODO: 06/12/2021  ajustar post dos dados para dois parametros
 
         public void postData() throws UnsupportedEncodingException {
             HttpClient httpclient = new DefaultHttpClient();
