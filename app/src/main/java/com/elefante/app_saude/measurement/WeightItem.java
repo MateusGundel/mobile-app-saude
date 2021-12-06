@@ -10,6 +10,6 @@ public class WeightItem {
 
     @Override
     public String toString() {
-        return "Valor " + valor + "\nRealizada em: " + new SimpleDateFormat("dd/MM/yyyy hh:mm").format(date);
+        return "Peso " + valor + "\nLançado em: " + new SimpleDateFormat("dd/MM/yyyy hh:mm").format(date);
     }
 }

@@ -23,7 +23,7 @@ public class WeightShow extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weight_show);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         SharedPreferences prefs = this.getSharedPreferences(
                 "com.elefante.app_saude", Context.MODE_PRIVATE);
         String access_code = prefs.getString("access_token", "");
@@ -33,7 +33,7 @@ public class WeightShow extends AppCompatActivity {
         TextView text_date = findViewById(R.id.weight_date);
         TextView text_id = findViewById(R.id.weight_id);
         text_id.setText(myIntent.getStringExtra("id"));
-        text_name.setText(myIntent.getStringExtra("name"));
+        text_name.setText(myIntent.getStringExtra("valor"));
         text_date.setText(myIntent.getStringExtra("date"));
         Button btn_delete = findViewById(R.id.weight_delete);
         btn_delete.setOnClickListener(v -> {

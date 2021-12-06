@@ -40,7 +40,15 @@
         <activity android:name=".measurement.Diabetes" />
         <activity android:name=".measurement.HeartBeat" />
         <activity android:name=".measurement.Height" />
-        <activity android:name=".measurement.Weigth" />
+        <activity
+            android:name=".measurement.Weigth"
+            android:parentActivityName=".Menu" />
+        <activity
+            android:name=".measurement.WeightAdd"
+            android:parentActivityName=".measurement.Weigth" />
+        <activity
+            android:name=".measurement.WeightShow"
+            android:parentActivityName=".measurement.Weigth" />
         <activity android:name=".user.UserInfo" />
 
         <uses-library

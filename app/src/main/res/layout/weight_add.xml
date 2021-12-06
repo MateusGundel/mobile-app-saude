@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:text="Adicionar peso"
         android:textColor="@color/black_text"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -22,24 +22,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
+        android:autofillHints="no"
         android:ems="10"
         android:hint="@string/input_diabetes"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="no" />
-    <EditText
-        android:id="@+id/date_add_weight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Data Medida"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/text_add_weight"
-        android:autofillHints="no" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
@@ -48,7 +37,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/adicionar"
-        app:layout_constraintTop_toBottomOf="@+id/date_add_weight"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="155dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight_date_time"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/weight_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="12/02/2021 12:15"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_add_weight" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

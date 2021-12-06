@@ -42,6 +42,7 @@ public class Weigth extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
     public void getData(String access_code) {
         HttpClient httpclient = new DefaultHttpClient();
         HttpGet httpGet = new HttpGet("https://app-saude-unisc.herokuapp.com/api/v1/weight");
@@ -57,7 +58,7 @@ public class Weigth extends AppCompatActivity {
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             WeightItem wirht_item = new WeightItem();
-                            wirht_item.valor = jsonObject.getString("name");
+                            wirht_item.valor = jsonObject.getString("value");
                             wirht_item.id = jsonObject.getInt("id");
                             wirht_item.date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(jsonObject.getString("date"));
                             list_item.add(wirht_item);
@@ -73,7 +74,7 @@ public class Weigth extends AppCompatActivity {
                             WeightItem item = adapter.getItem(position);
                             appInfo.putExtra("valor", item.valor);
                             appInfo.putExtra("id", item.id.toString());
-                            appInfo.putExtra("date", new SimpleDateFormat("dd/MM/yyyy hh:mm").format(item.date).toString());
+                            appInfo.putExtra("date", new SimpleDateFormat("dd/MM/yyyy hh:mm").format(item.date));
                             startActivity(appInfo);
                         });
                         weigh_list.setAdapter(adapter);
