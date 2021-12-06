@@ -1,11 +1,15 @@
 package com.elefante.app_saude.measurement;
 
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,6 +26,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class VaccineAdd extends AppCompatActivity {
     @Override
@@ -38,6 +44,31 @@ public class VaccineAdd extends AppCompatActivity {
             }
         });
 
+        EditText weight_date_time = findViewById(R.id.date_add_vaccine);
+        weight_date_time.setInputType(InputType.TYPE_NULL);
+        weight_date_time.setOnClickListener(v -> {
+            Calendar calendar = Calendar.getInstance();
+            DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    calendar.set(Calendar.YEAR, year);
+                    calendar.set(Calendar.MONTH, month);
+                    calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                    TimePickerDialog.OnTimeSetListener timeSetListener = (view1, hourOfDay, minute) -> {
+                        calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                        calendar.set(Calendar.MINUTE, minute);
+
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                        weight_date_time.setText(simpleDateFormat.format(calendar.getTime()));
+
+                    };
+                    new TimePickerDialog(VaccineAdd.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show();
+                }
+            };
+            new DatePickerDialog(VaccineAdd.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+        });
+
     }
 
     public void postData() throws UnsupportedEncodingException {
@@ -48,10 +79,12 @@ public class VaccineAdd extends AppCompatActivity {
                 "com.elefante.app_saude", Context.MODE_PRIVATE);
         String access_code = prefs.getString("access_token", "");
 
-        EditText editText = findViewById(R.id.text_add_vaccine);
+        EditText text_add_vaccine = findViewById(R.id.text_add_vaccine);
+        EditText date_add_vaccine = findViewById(R.id.date_add_vaccine);
         try {
             JSONObject json = new JSONObject();
-            json.put("name", editText.getText().toString());
+            json.put("name", text_add_vaccine.getText().toString());
+            json.put("date", date_add_vaccine.getText().toString());
             StringEntity params = new StringEntity(json.toString());
             httppost.setEntity(params);
             httppost.addHeader("content-type", "application/json");
