@@ -29,4 +29,9 @@
     <string name="weight_title">Peso</string>
     <string name="perfil">Perfil</string>
     <string name="remover">Remover</string>
+    <string name="diast_lica">Diastólica</string>
+    <string name="sistolica">Sistolica</string>
+    <string name="height_title">Altura</string>
+    <string name="IMC">IMC</string>
+    <string name="buscando_dados_e_calculando">Buscando dados e calculando...</string>
 </resources>

@@ -1,10 +1,13 @@
 package com.elefante.app_saude.measurement;
 
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -22,6 +25,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class DiabetesAdd extends AppCompatActivity {
     @Override
@@ -29,7 +34,7 @@ public class DiabetesAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diabetes_add);
 
-        Button button_add = findViewById(R.id.diabete_add_button);
+        Button button_add = findViewById(R.id.button_add_diabetes);
         button_add.setOnClickListener(v -> {
             try {
                 postData();
@@ -37,7 +42,27 @@ public class DiabetesAdd extends AppCompatActivity {
                 e.printStackTrace();
             }
         });
+        EditText date_add_diabetes = findViewById(R.id.date_add_diabetes);
+        date_add_diabetes.setInputType(InputType.TYPE_NULL);
+        date_add_diabetes.setOnClickListener(v -> {
+            Calendar calendar = Calendar.getInstance();
+            DatePickerDialog.OnDateSetListener dateSetListener = (view, year, month, dayOfMonth) -> {
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
+                TimePickerDialog.OnTimeSetListener timeSetListener = (view1, hourOfDay, minute) -> {
+                    calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                    calendar.set(Calendar.MINUTE, minute);
+
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                    date_add_diabetes.setText(simpleDateFormat.format(calendar.getTime()));
+
+                };
+                new TimePickerDialog(DiabetesAdd.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show();
+            };
+            new DatePickerDialog(DiabetesAdd.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+        });
     }
 
     public void postData() throws UnsupportedEncodingException {
@@ -48,10 +73,12 @@ public class DiabetesAdd extends AppCompatActivity {
                 "com.elefante.app_saude", Context.MODE_PRIVATE);
         String access_code = prefs.getString("access_token", "");
 
-        EditText editText = findViewById(R.id.text_add_diabetes);
+        EditText text_add_diabetes = findViewById(R.id.text_add_diabetes);
+        EditText date_add_diabetes = findViewById(R.id.date_add_diabetes);
         try {
             JSONObject json = new JSONObject();
-            json.put("name", editText.getText().toString());
+            json.put("value", text_add_diabetes.getText().toString());
+            json.put("date", date_add_diabetes.getText().toString());
             StringEntity params = new StringEntity(json.toString());
             httppost.setEntity(params);
             httppost.addHeader("content-type", "application/json");

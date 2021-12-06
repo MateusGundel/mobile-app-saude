@@ -6,49 +6,52 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/heart_beat_title"
+        android:id="@+id/height_add_title"
         style="@style/title_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adicionar medição diabetes"
+        android:text="Adicionar altura"
         android:textColor="@color/black_text"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/text_add_diabetes"
+        android:id="@+id/text_add_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
+        android:autofillHints="no"
         android:ems="10"
         android:hint="@string/input_diabetes"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="no" />
-    <EditText
-        android:id="@+id/date_add_diabetes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Data Medida"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/text_add_diabetes"
-        android:autofillHints="no" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
-        android:id="@+id/button_add_diabetes"
+        android:id="@+id/button_add_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/adicionar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_add_diabetes"
+        app:layout_constraintTop_toBottomOf="@+id/height_date_time"
         tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/height_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="12/02/2021 12:15"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_add_height" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

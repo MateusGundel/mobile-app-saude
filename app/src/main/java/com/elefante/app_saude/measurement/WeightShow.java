@@ -45,7 +45,7 @@ public class WeightShow extends AppCompatActivity {
                 try {
                     HttpResponse response = httpclient.execute(httpDelete);
                     if (response.getStatusLine().getStatusCode() == 200) {
-                        Intent appInfo = new Intent(WeightShow.this, Weigth.class);
+                        Intent appInfo = new Intent(WeightShow.this, Weight.class);
                         startActivity(appInfo);
                     } else {
                         runOnUiThread(() -> {

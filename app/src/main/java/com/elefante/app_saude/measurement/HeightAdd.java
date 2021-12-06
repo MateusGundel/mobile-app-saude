@@ -1,5 +1,6 @@
 package com.elefante.app_saude.measurement;
 
+
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
@@ -8,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -27,15 +29,37 @@ import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-
-public class BloodPressureAdd extends AppCompatActivity {
-
+public class HeightAdd extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.blood_pressure_add);
+        setContentView(R.layout.height_add);
 
-        Button button_add = findViewById(R.id.button_add_blood_pressure);
+        EditText height_date_time = findViewById(R.id.height_date_time);
+        height_date_time.setInputType(InputType.TYPE_NULL);
+        height_date_time.setOnClickListener(v -> {
+            Calendar calendar = Calendar.getInstance();
+            DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    calendar.set(Calendar.YEAR, year);
+                    calendar.set(Calendar.MONTH, month);
+                    calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                    TimePickerDialog.OnTimeSetListener timeSetListener = (view1, hourOfDay, minute) -> {
+                        calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                        calendar.set(Calendar.MINUTE, minute);
+
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                        height_date_time.setText(simpleDateFormat.format(calendar.getTime()));
+
+                    };
+                    new TimePickerDialog(HeightAdd.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show();
+                }
+            };
+            new DatePickerDialog(HeightAdd.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+        });
+        Button button_add = findViewById(R.id.button_add_height);
         button_add.setOnClickListener(v -> {
             try {
                 postData();
@@ -43,45 +67,24 @@ public class BloodPressureAdd extends AppCompatActivity {
                 e.printStackTrace();
             }
         });
-        EditText date_add_blood_pressure = findViewById(R.id.date_add_blood_pressure);
-        date_add_blood_pressure.setInputType(InputType.TYPE_NULL);
-        date_add_blood_pressure.setOnClickListener(v -> {
-            Calendar calendar = Calendar.getInstance();
-            DatePickerDialog.OnDateSetListener dateSetListener = (view, year, month, dayOfMonth) -> {
-                calendar.set(Calendar.YEAR, year);
-                calendar.set(Calendar.MONTH, month);
-                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
-                TimePickerDialog.OnTimeSetListener timeSetListener = (view1, hourOfDay, minute) -> {
-                    calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                    calendar.set(Calendar.MINUTE, minute);
-
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-                    date_add_blood_pressure.setText(simpleDateFormat.format(calendar.getTime()));
-
-                };
-                new TimePickerDialog(BloodPressureAdd.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show();
-            };
-            new DatePickerDialog(BloodPressureAdd.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
-        });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void postData() throws UnsupportedEncodingException {
         HttpClient httpclient = new DefaultHttpClient();
         HttpPost httppost = new HttpPost(
-                "http://app-saude-unisc.herokuapp.com/api/v1/blood_pressure/");
+                "http://app-saude-unisc.herokuapp.com/api/v1/height/");
         SharedPreferences prefs = this.getSharedPreferences(
                 "com.elefante.app_saude", Context.MODE_PRIVATE);
         String access_code = prefs.getString("access_token", "");
 
-        EditText text_add_blood_pressure = findViewById(R.id.text_add_blood_pressure);
-        EditText text_add_blood_pressure2 = findViewById(R.id.text_add_blood_pressure2);
-        EditText date_add_blood_pressure = findViewById(R.id.date_add_blood_pressure);
+        EditText text_add_height = findViewById(R.id.text_add_height);
+        EditText date_add_height = findViewById(R.id.height_date_time);
         try {
+            System.out.println(date_add_height.getText().toString());
             JSONObject json = new JSONObject();
-            json.put("first_value", text_add_blood_pressure.getText().toString());
-            json.put("second_value", text_add_blood_pressure2.getText().toString());
-            json.put("date", date_add_blood_pressure.getText().toString());
+            json.put("value", text_add_height.getText().toString());
+            json.put("date", date_add_height.getText().toString());
             StringEntity params = new StringEntity(json.toString());
             httppost.setEntity(params);
             httppost.addHeader("content-type", "application/json");
@@ -96,11 +99,11 @@ public class BloodPressureAdd extends AppCompatActivity {
                 HttpResponse response = httpclient.execute(httppost);
 
                 if (response.getStatusLine().getStatusCode() == 200) {
-                    Intent appInfo = new Intent(BloodPressureAdd.this, BloodPressure.class);
+                    Intent appInfo = new Intent(HeightAdd.this, Height.class);
                     startActivity(appInfo);
                 } else {
                     runOnUiThread(() -> {
-                        final Toast toast = Toast.makeText(com.elefante.app_saude.measurement.BloodPressureAdd.this,
+                        final Toast toast = Toast.makeText(HeightAdd.this,
                                 "Erro ao salvar",
                                 Toast.LENGTH_LONG);
                         toast.show();

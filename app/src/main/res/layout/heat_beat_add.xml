@@ -35,7 +35,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Data Medida"
-        android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@id/text_add_heart_beat"
@@ -48,7 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/adicionar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date_add_heart_beat"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="155dp" />
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

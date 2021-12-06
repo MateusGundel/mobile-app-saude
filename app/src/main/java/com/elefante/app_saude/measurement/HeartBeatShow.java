@@ -33,7 +33,7 @@ public class HeartBeatShow extends AppCompatActivity {
         TextView text_date = findViewById(R.id.heart_beat_date);
         TextView text_id = findViewById(R.id.heart_beat_id);
         text_id.setText(myIntent.getStringExtra("id"));
-        text_name.setText(myIntent.getStringExtra("name"));
+        text_name.setText(myIntent.getStringExtra("valor"));
         text_date.setText(myIntent.getStringExtra("date"));
         Button btn_delete = findViewById(R.id.heart_beat_delete);
         btn_delete.setOnClickListener(v -> {

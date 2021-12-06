@@ -24,7 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Weigth extends AppCompatActivity {
+public class Weight extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,7 @@ public class Weigth extends AppCompatActivity {
 
         FloatingActionButton floatingActionButton = findViewById(R.id.weight_add_button);
         floatingActionButton.setOnClickListener(v -> {
-            Intent appInfo = new Intent(Weigth.this, WeightAdd.class);
+            Intent appInfo = new Intent(Weight.this, WeightAdd.class);
             startActivity(appInfo);
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -67,10 +67,10 @@ public class Weigth extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     runOnUiThread(() -> {
-                        ArrayAdapter<WeightItem> adapter = new ArrayAdapter<>(Weigth.this, android.R.layout.simple_list_item_1, list_item);
+                        ArrayAdapter<WeightItem> adapter = new ArrayAdapter<>(Weight.this, android.R.layout.simple_list_item_1, list_item);
                         ListView weigh_list = findViewById(R.id.weight_list_view);
                         weigh_list.setOnItemClickListener((parent, view, position, id) -> {
-                            Intent appInfo = new Intent(Weigth.this, WeightShow.class);
+                            Intent appInfo = new Intent(Weight.this, WeightShow.class);
                             WeightItem item = adapter.getItem(position);
                             appInfo.putExtra("valor", item.valor);
                             appInfo.putExtra("id", item.id.toString());

@@ -28,5 +28,6 @@ public class UserInfo extends AppCompatActivity {
             Intent login = new Intent(UserInfo.this, Login.class);
             startActivity(login);
         });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

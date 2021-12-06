@@ -99,7 +99,7 @@ public class WeightAdd extends AppCompatActivity {
                 HttpResponse response = httpclient.execute(httppost);
 
                 if (response.getStatusLine().getStatusCode() == 200) {
-                    Intent appInfo = new Intent(WeightAdd.this, Weigth.class);
+                    Intent appInfo = new Intent(WeightAdd.this, Weight.class);
                     startActivity(appInfo);
                 } else {
                     runOnUiThread(() -> {

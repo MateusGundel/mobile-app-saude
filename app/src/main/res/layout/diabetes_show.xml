@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/blood_pressure_id"
+        android:id="@+id/diabetes_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="id"
@@ -18,28 +18,28 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/blood_pressure_name"
+        android:id="@+id/diabetes_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name"
-        app:layout_constraintTop_toBottomOf="@+id/blood_pressure_id"
+        app:layout_constraintTop_toBottomOf="@+id/diabetes_id"
         tools:ignore="MissingConstraints"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 
     <TextView
-        android:id="@+id/blood_pressure_date"
+        android:id="@+id/diabetes_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="01/01/1900"
-        app:layout_constraintTop_toBottomOf="@+id/blood_pressure_name"
+        app:layout_constraintTop_toBottomOf="@+id/diabetes_value"
         tools:ignore="MissingConstraints"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/blood_pressure_delete"
+        android:id="@+id/diabetes_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

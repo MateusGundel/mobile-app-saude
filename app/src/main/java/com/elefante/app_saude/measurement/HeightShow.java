@@ -18,38 +18,38 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-public class DiabetesShow extends AppCompatActivity {
+public class HeightShow extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.diabetes_show);
-
+        setContentView(R.layout.height_show);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         SharedPreferences prefs = this.getSharedPreferences(
                 "com.elefante.app_saude", Context.MODE_PRIVATE);
         String access_code = prefs.getString("access_token", "");
 
         Intent myIntent = getIntent();
-        TextView diabetes_value = findViewById(R.id.diabetes_value);
-        TextView text_date = findViewById(R.id.diabetes_date);
-        TextView text_id = findViewById(R.id.diabetes_id);
+        TextView text_name = findViewById(R.id.height_name);
+        TextView text_date = findViewById(R.id.height_date);
+        TextView text_id = findViewById(R.id.height_id);
         text_id.setText(myIntent.getStringExtra("id"));
-        diabetes_value.setText(myIntent.getStringExtra("valor"));
+        text_name.setText(myIntent.getStringExtra("valor"));
         text_date.setText(myIntent.getStringExtra("date"));
-        Button btn_delete = findViewById(R.id.diabetes_delete);
+        Button btn_delete = findViewById(R.id.height_delete);
         btn_delete.setOnClickListener(v -> {
 
             HttpClient httpclient = new DefaultHttpClient();
-            HttpDelete httpDelete = new HttpDelete("https://app-saude-unisc.herokuapp.com/api/v1/diabetes/" + myIntent.getStringExtra("id"));
+            HttpDelete httpDelete = new HttpDelete("https://app-saude-unisc.herokuapp.com/api/v1/height/" + myIntent.getStringExtra("id"));
             httpDelete.setHeader("Authorization", "Bearer " + access_code);
             Thread thread = new Thread(() -> {
                 try {
                     HttpResponse response = httpclient.execute(httpDelete);
                     if (response.getStatusLine().getStatusCode() == 200) {
-                        Intent appInfo = new Intent(DiabetesShow.this, Diabetes.class);
+                        Intent appInfo = new Intent(HeightShow.this, Height.class);
                         startActivity(appInfo);
                     } else {
                         runOnUiThread(() -> {
-                            final Toast toast = Toast.makeText(DiabetesShow.this,
+                            final Toast toast = Toast.makeText(HeightShow.this,
                                     "Erro ao tentar excluir a vacina",
                                     Toast.LENGTH_LONG);
                             toast.show();

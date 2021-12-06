@@ -13,7 +13,7 @@
             style="@style/MenuItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:background="@drawable/button_menu"
             android:clickable="true"
             android:focusable="true"
@@ -42,7 +42,7 @@
             android:id="@+id/menu_heatbeat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:background="@drawable/button_menu"
             android:orientation="vertical"
             android:padding="10dp">
@@ -75,7 +75,7 @@
             android:id="@+id/menu_height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:background="@drawable/button_menu"
             android:orientation="vertical"
             android:padding="10dp">
@@ -102,7 +102,7 @@
             android:id="@+id/menu_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:background="@drawable/button_menu"
             android:orientation="vertical"
             android:padding="10dp">
@@ -135,7 +135,7 @@
             android:id="@+id/menu_diabetes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:background="@drawable/button_menu"
             android:orientation="vertical"
             android:padding="10dp">
@@ -169,7 +169,7 @@
             android:id="@+id/menu_blood_pressure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:background="@drawable/button_menu"
             android:orientation="vertical"
             android:padding="10dp">
@@ -194,6 +194,43 @@
                 android:textSize="20sp" />
 
         </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/menu_imc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/button_menu"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="false"
+                android:background="@drawable/imc_icon"
+                android:baselineAlignBottom="false"
+                android:clickable="false"
+                android:scaleType="center"
+                android:textSize="20sp" />
+
+            <TextView
+                style="@style/MenuItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/IMC"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
     </TableRow>
 
 </TableLayout>

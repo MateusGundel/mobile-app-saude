@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:text="Adicionar medição pressão sanguinea"
         android:textColor="@color/black_text"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -22,24 +22,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
+        android:autofillHints="no"
         android:ems="10"
-        android:hint="@string/input_diabetes"
+        android:hint="@string/sistolica"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="no" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/text_add_blood_pressure2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="no"
+        android:ems="10"
+        android:hint="@string/diast_lica"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_add_blood_pressure" />
+
     <EditText
         android:id="@+id/date_add_blood_pressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints="no"
         android:ems="10"
         android:hint="Data Medida"
-        android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/text_add_blood_pressure"
-        android:autofillHints="no" />
+        app:layout_constraintTop_toBottomOf="@+id/text_add_blood_pressure2" />
 
 
     <Button
@@ -48,7 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/adicionar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date_add_blood_pressure"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="155dp" />
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

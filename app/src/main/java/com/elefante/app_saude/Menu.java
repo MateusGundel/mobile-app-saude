@@ -1,24 +1,21 @@
 package com.elefante.app_saude;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.elefante.app_saude.login.Login;
 import com.elefante.app_saude.measurement.BloodPressure;
 import com.elefante.app_saude.measurement.Diabetes;
 import com.elefante.app_saude.measurement.HeartBeat;
 import com.elefante.app_saude.measurement.Height;
+import com.elefante.app_saude.measurement.Imc;
 import com.elefante.app_saude.measurement.Vaccine;
-import com.elefante.app_saude.measurement.Weigth;
+import com.elefante.app_saude.measurement.Weight;
 import com.elefante.app_saude.user.UserInfo;
 
 public class Menu extends AppCompatActivity {
@@ -43,12 +40,6 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
-//        TextView email_menu = findViewById(R.id.email_menu);
-//        TextView access_code_menu = findViewById(R.id.access_code_menu);
-        SharedPreferences prefs = this.getSharedPreferences(
-                "com.elefante.app_saude", Context.MODE_PRIVATE);
-//        email_menu.setText(prefs.getString("email", ""));
-//        access_code_menu.setText(prefs.getString("access_token", ""));
         LinearLayout menu_vaccine = findViewById(R.id.menu_vaccine);
         menu_vaccine.setOnClickListener(v -> {
             Intent appInfo = new Intent(Menu.this, Vaccine.class);
@@ -66,7 +57,7 @@ public class Menu extends AppCompatActivity {
         });
         LinearLayout menu_weight = findViewById(R.id.menu_weight);
         menu_weight.setOnClickListener(v -> {
-            Intent appInfo = new Intent(Menu.this, Weigth.class);
+            Intent appInfo = new Intent(Menu.this, Weight.class);
             startActivity(appInfo);
         });
         LinearLayout menu_diabetes = findViewById(R.id.menu_diabetes);
@@ -77,6 +68,11 @@ public class Menu extends AppCompatActivity {
         LinearLayout menu_blood_pressure = findViewById(R.id.menu_blood_pressure);
         menu_blood_pressure.setOnClickListener(v -> {
             Intent appInfo = new Intent(Menu.this, BloodPressure.class);
+            startActivity(appInfo);
+        });
+        LinearLayout menu_imc = findViewById(R.id.menu_imc);
+        menu_imc.setOnClickListener(v -> {
+            Intent appInfo = new Intent(Menu.this, Imc.class);
             startActivity(appInfo);
         });
     }

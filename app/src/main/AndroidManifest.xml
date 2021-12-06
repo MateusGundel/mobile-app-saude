@@ -36,20 +36,57 @@
         <activity
             android:name=".measurement.VaccineShow"
             android:parentActivityName=".measurement.Vaccine" />
-        <activity android:name=".measurement.BloodPressure" />
-        <activity android:name=".measurement.Diabetes" />
-        <activity android:name=".measurement.HeartBeat" />
-        <activity android:name=".measurement.Height" />
         <activity
-            android:name=".measurement.Weigth"
+            android:name=".measurement.BloodPressure"
+            android:parentActivityName=".Menu" />
+        <activity
+            android:name=".measurement.BloodPressureAdd"
+            android:parentActivityName=".measurement.BloodPressure" />
+        <activity
+            android:name=".measurement.BloodPressureShow"
+            android:parentActivityName=".measurement.BloodPressure" />
+        <activity
+            android:name=".measurement.Diabetes"
+            android:parentActivityName=".Menu" />
+        <activity
+            android:name=".measurement.DiabetesAdd"
+            android:parentActivityName=".measurement.Diabetes" />
+        <activity
+            android:name=".measurement.DiabetesShow"
+            android:parentActivityName=".measurement.Diabetes" />
+        <activity
+            android:name=".measurement.HeartBeat"
+            android:parentActivityName=".Menu" />
+        <activity
+            android:name=".measurement.HeartBeatAdd"
+            android:parentActivityName=".measurement.HeartBeat" />
+        <activity
+            android:name=".measurement.HeartBeatShow"
+            android:parentActivityName=".measurement.HeartBeat" />
+        <activity
+            android:name=".measurement.Height"
+            android:parentActivityName=".Menu" />
+        <activity
+            android:name=".measurement.HeightAdd"
+            android:parentActivityName=".measurement.Height" />
+        <activity
+            android:name=".measurement.HeightShow"
+            android:parentActivityName=".measurement.Height" />
+        <activity
+            android:name=".measurement.Weight"
             android:parentActivityName=".Menu" />
         <activity
             android:name=".measurement.WeightAdd"
-            android:parentActivityName=".measurement.Weigth" />
+            android:parentActivityName=".measurement.Weight" />
         <activity
             android:name=".measurement.WeightShow"
-            android:parentActivityName=".measurement.Weigth" />
-        <activity android:name=".user.UserInfo" />
+            android:parentActivityName=".measurement.Weight" />
+        <activity
+            android:name=".measurement.Imc"
+            android:parentActivityName=".Menu" />
+        <activity
+            android:name=".user.UserInfo"
+            android:parentActivityName=".Menu" />
 
         <uses-library
             android:name="org.apache.http.legacy"
