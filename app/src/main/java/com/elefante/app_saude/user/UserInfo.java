@@ -1,11 +1,14 @@
 package com.elefante.app_saude.user;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.Button;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.elefante.app_saude.R;
@@ -22,11 +25,26 @@ public class UserInfo extends AppCompatActivity {
                 "com.elefante.app_saude", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         exit_button.setOnClickListener(v -> {
-            editor.remove("email");
-            editor.remove("access_token");
-            editor.apply();
-            Intent login = new Intent(UserInfo.this, Login.class);
-            startActivity(login);
+            AlertDialog.Builder builder = new AlertDialog.Builder(UserInfo.this);
+            builder.setMessage("Você tem certeza que deseja sair ?")
+                    .setTitle("Confirmação de saída");
+            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    editor.remove("email");
+                    editor.remove("access_token");
+                    editor.apply();
+                    Intent login = new Intent(UserInfo.this, Login.class);
+                    startActivity(login);
+                }
+            });
+            builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    Intent login = new Intent(UserInfo.this, Menu.class);
+                    startActivity(login);
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
